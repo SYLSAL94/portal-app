@@ -123,18 +123,7 @@ const LandingPage = () => {
               </button>
             </div>
             
-            <div className="flex items-center gap-6">
-              <div className="flex -space-x-3">
-                {[1,2,3,4].map(i => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-[#131313] bg-[#2d2d2d] flex items-center justify-center overflow-hidden grayscale hover:grayscale-0 transition-all">
-                    <img src={`https://i.pravatar.cc/100?u=${i+10}`} alt="user" className="opacity-80" />
-                  </div>
-                ))}
-              </div>
-              <div className="verge-label-mono text-[8px] font-black text-[#949494] uppercase tracking-[0.2em]">
-                Utilisé par +50 Clubs
-              </div>
-            </div>
+
           </motion.div>
 
           {/* AI Preview Mockup */}
