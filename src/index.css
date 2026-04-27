@@ -1,4 +1,6 @@
+@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 
 :root {
   --canvas-black: #131313;
