@@ -26,9 +26,11 @@ const FeatureCard = ({ icon: Icon, title, text, delay }) => (
 const LandingPage = () => {
   const navigateTo = (app) => {
     if (app === 'WYSCOUT') {
-      window.location.href = 'http://localhost:5173'; // Scouting App Port par défaut Vite
+      window.location.href = 'https://scouting.theanalyst.cloud';
     } else if (app === 'OPTAVISION') {
-      window.location.href = 'http://localhost:5174'; // OptaVision App (Nouvel emplacement)
+      window.location.href = 'https://optavision.theanalyst.cloud';
+    } else if (app === 'DATABASE') {
+      window.location.href = 'https://db.theanalyst.cloud';
     }
   };
 
@@ -60,6 +62,13 @@ const LandingPage = () => {
           >
             OPTA VISION
           </button>
+          <div className="w-1 h-1 bg-white/20 rounded-full" />
+          <button 
+            onClick={() => navigateTo('DATABASE')}
+            className="px-6 py-2 border border-white/10 hover:border-[#3cffd0] rounded-full verge-label-mono text-[9px] text-[#949494] hover:text-[#3cffd0] transition-all font-black tracking-widest"
+          >
+            DATABASE
+          </button>
         </div>
       </nav>
 
@@ -88,10 +97,10 @@ const LandingPage = () => {
               Choisissez votre univers de données pour commencer l'analyse.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center gap-6 mb-12">
+            <div className="flex flex-wrap items-center gap-6 mb-12">
               <button 
                 onClick={() => navigateTo('WYSCOUT')} 
-                className="w-full sm:w-auto group relative px-12 py-6 bg-[#3cffd0] text-black rounded-full verge-label-mono text-[11px] font-black tracking-[0.2em] transition-all hover:scale-105 active:scale-95 shadow-[0_20px_60px_rgba(60,255,208,0.2)] flex items-center justify-center gap-4"
+                className="w-full sm:w-auto group relative px-10 py-6 bg-[#3cffd0] text-black rounded-full verge-label-mono text-[11px] font-black tracking-[0.2em] transition-all hover:scale-105 active:scale-95 shadow-[0_20px_60px_rgba(60,255,208,0.2)] flex items-center justify-center gap-4"
               >
                 WYSCOUT DATA
                 <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
@@ -99,10 +108,18 @@ const LandingPage = () => {
 
               <button 
                 onClick={() => navigateTo('OPTAVISION')} 
-                className="w-full sm:w-auto group relative px-12 py-6 bg-white/5 border border-white/20 text-white rounded-full verge-label-mono text-[11px] font-black tracking-[0.2em] transition-all hover:bg-white/10 hover:border-[#3cffd0]/40 flex items-center justify-center gap-4"
+                className="w-full sm:w-auto group relative px-10 py-6 bg-white/5 border border-white/20 text-white rounded-full verge-label-mono text-[11px] font-black tracking-[0.2em] transition-all hover:bg-white/10 hover:border-[#3cffd0]/40 flex items-center justify-center gap-4"
               >
                 OPTA VISION
                 <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+              </button>
+
+              <button 
+                onClick={() => navigateTo('DATABASE')} 
+                className="w-full sm:w-auto group relative px-10 py-6 bg-white/5 border border-white/20 text-white/60 rounded-full verge-label-mono text-[11px] font-black tracking-[0.2em] transition-all hover:bg-white/10 hover:text-white hover:border-[#3cffd0]/40 flex items-center justify-center gap-4"
+              >
+                ADMINER DB
+                <Database size={18} className="group-hover:text-[#3cffd0] transition-colors" />
               </button>
             </div>
             
